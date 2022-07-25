@@ -1,0 +1,34 @@
+version: 2.1
+
+orbs:
+  coverage-reporter: codacy/coverage-reporter@11.10.0
+  python: circleci/python@2.0.3
+
+commands:
+  setup_test_sentiment_analysis:
+    steps:
+      - checkout
+      - run:
+          name: "Install package"
+          command: |
+            pip install -e .
+      - run:
+          name: "Test sentiment analysis"
+          command: |
+            python tests/test_sentiment.py
+      # - coverage-reporter/send_report:
+      #     coverage-reports: 'coverage.xml'
+      #     project-token: $CODACY_PROJECT_TOKEN
+
+jobs:
+  test_sentiment: # this can be any name you choose
+    executor: python/default # use the default executor defined within the orb
+    steps:
+      - setup_test_sentiment_analysis
+
+workflows:
+  # Name the workflow "welcome"
+  main:
+    # Run the welcome/run job in its own container
+    jobs:
+      - test_urbans
