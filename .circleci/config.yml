@@ -19,6 +19,7 @@ commands:
           command: |
             pip install -e .
             pip install numpy transformers wordcloud scipy
+            pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
       - run:
           name: "Test sentiment analysis"
           command: |
