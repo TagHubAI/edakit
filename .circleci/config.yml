@@ -4,6 +4,12 @@ orbs:
   coverage-reporter: codacy/coverage-reporter@11.10.0
   python: circleci/python@2.0.3
 
+executors:
+  python-docker:
+    docker:
+      - image: cimg/python:3.10
+    resource_class: medium
+
 commands:
   setup_test_sentiment_analysis:
     steps:
@@ -31,4 +37,4 @@ workflows:
   main:
     # Run the welcome/run job in its own container
     jobs:
-      - test_urbans
+      - test_sentiment
