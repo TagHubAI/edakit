@@ -18,6 +18,7 @@ commands:
           name: "Install package"
           command: |
             pip install -e .
+            pip install numpy transformers wordcloud scipy
       - run:
           name: "Test sentiment analysis"
           command: |
