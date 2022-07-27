@@ -30,6 +30,6 @@ if __name__ == "__main__":
     # EDAKIT_PATH = os.path.join(Path(__file__).parent.parent, "src")
     # print(EDAKIT_PATH)
     test_sentiment()
-    import pdb
+    # import pdb
 
-    pdb.set_trace()
+    # pdb.set_trace()
