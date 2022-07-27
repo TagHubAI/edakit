@@ -17,7 +17,7 @@
 
 ## ⚙️ Installation
 ```bash
-pip install eda
+pip install edakit
 ```
 
 <!-- ## ✨ What is good about urbans?

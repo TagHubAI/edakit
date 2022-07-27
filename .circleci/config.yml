@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   coverage-reporter: codacy/coverage-reporter@11.10.0
-  python: circleci/python@2.0.3
 
 executors:
   python-docker:
@@ -17,7 +16,7 @@ commands:
       - run:
           name: "Install package"
           command: |
-            pip install -e .
+            pip install edakit
             pip install numpy transformers wordcloud scipy
             pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
       - run:
@@ -30,7 +29,7 @@ commands:
 
 jobs:
   test_sentiment: # this can be any name you choose
-    executor: python/default # use the default executor defined within the orb
+    executor: python-docker # use the default executor defined within the orb
     steps:
       - setup_test_sentiment_analysis
 
