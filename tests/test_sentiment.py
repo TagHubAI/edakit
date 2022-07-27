@@ -8,7 +8,7 @@ EDAKIT_PATH = os.path.join(Path(__file__).parent.parent, "src")
 print(EDAKIT_PATH)
 sys.path.append(EDAKIT_PATH)
 
-from eda.sentiment_analysis import SentimentAnalyzer
+from edakit.sentiment_analysis import SentimentAnalyzer
 
 def test_sentiment():
     # from ..eda.sentiment_analysis import SentimentAnalyzer
